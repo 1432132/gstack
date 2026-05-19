@@ -1206,8 +1206,9 @@ If the user types `/mirror history` instead of `/mirror`, list past reflections:
 setopt +o nomatch 2>/dev/null || true  # zsh compat
 GSTACK_HOME="${GSTACK_HOME:-$HOME/.gstack}"
 MIRROR_DIR="$GSTACK_HOME/mirror"
-if [ -d "$MIRROR_DIR" ]; then
-  find "$MIRROR_DIR" -maxdepth 1 -name "*.md" -type f 2>/dev/null | xargs ls -1t 2>/dev/null
+if [ -d "$MIRROR_DIR" ] && [ -n "$(find "$MIRROR_DIR" -maxdepth 1 -name '*.md' -type f -print -quit 2>/dev/null)" ]; then
+  find "$MIRROR_DIR" -maxdepth 1 -name "*.md" -type f -printf "%T@ %p\n" 2>/dev/null \
+    | sort -rn | cut -d' ' -f2-
 else
   echo "NO_HISTORY"
 fi
