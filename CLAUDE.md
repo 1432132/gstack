@@ -100,6 +100,7 @@ gstack/
 ├── office-hours/    # /office-hours skill (YC Office Hours — startup diagnostic + builder brainstorm)
 ├── investigate/     # /investigate skill (systematic root-cause debugging)
 ├── retro/           # Retrospective skill (includes /retro global cross-project mode)
+├── mirror/          # /mirror skill (higher-dimensional self-observation, 9 phases + reflection notes)
 ├── bin/             # CLI utilities (gstack-repo-mode, gstack-slug, gstack-config, etc.)
 ├── document-release/ # /document-release skill (post-ship doc updates)
 ├── cso/             # /cso skill (OWASP Top 10 + STRIDE security audit)
